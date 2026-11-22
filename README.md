@@ -6,7 +6,7 @@ Personal portfolio of Amritansh Dixit, Software Development Engineer III at Citi
 
 A single, self-contained `index.html`, with no build step:
 
-- **Delivery pipeline hero:** an animated SVG pipeline that walks the Assurance Review module through six delivery stages on its own while it's on screen. Visitors can click or tab to any stage. The page never pins or takes over scrolling.
+- **Delivery pipeline hero:** an animated SVG pipeline that walks the Assurance Review module through six delivery stages on its own while it's on screen. Visitors can hover over, tap, click or tab to any stage. The page never pins or takes over scrolling.
 - **AI and agentic engineering:** hands-on use of Cognition's Devin coding agent, the Devin Coach offer, and Model Context Protocol (MCP) work.
 - **Work index:** filterable, expandable entries for the modules and projects.
 - **Career ladder:** SDE1 to SDE3, animated on scroll.
