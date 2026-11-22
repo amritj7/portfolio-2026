@@ -29,7 +29,7 @@ python3 -m http.server 8000
 
 ## Deploy
 
-Hosted on GitHub Pages from the `main` branch (root).
+Hosted on GitHub Pages from the `main` branch (root) at [amritanshdixit.in](https://amritanshdixit.in). The `CNAME` file sets the custom domain.
 
 ## Contact
 
