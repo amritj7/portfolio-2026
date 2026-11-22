@@ -197,6 +197,7 @@ footer .wrap{border-top:1px solid rgba(255,255,255,.14);padding-top:20px;display
 
 /* gsap-enhanced mode (.gs is set only when GSAP loads and motion is allowed) */
 .story{display:none}
+.gate{cursor:pointer;outline:none}.gate:hover text{fill:var(--red)}.gate:focus-visible circle:nth-child(3){stroke:var(--red);stroke-width:3}
 .gs .story{display:grid;grid-template-columns:minmax(0,180px) minmax(0,1fr);gap:8px 32px;align-items:start;min-height:136px;padding:18px 0 6px;border-top:1px solid var(--line)}
 .story-step{margin:4px 0 0;font-size:14px;color:var(--red);font-weight:600}
 .story h3{font-size:clamp(24px,2.6vw,32px);margin:0 0 8px}
@@ -514,6 +515,7 @@ const story = [
 const mods = ['Assurance Review', 'Legal Entity', 'Calendar', 'Audit Trail', 'AMR', 'OPA', 'Grid patching', 'Autosys flows'];
 let geo = null, packets = [], nodes = [], shipped = 0, next = 0, last = 0;
 let mode = 'ambient', storyTarget = 0, storyP = 0, storyPk = null;
+let pickStage = null;
 const el = (t, a, p) => { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; };
 
 function draw(){
@@ -532,6 +534,12 @@ function draw(){
   geo.fill = el('line', { x1: a.x, y1: a.y, x2: a.x, y2: a.y, stroke: 'var(--red)', 'stroke-width': 2.5, 'stroke-linecap': 'round', opacity: .7 }, g);
   nodes = pts.map((p, i) => {
     const n = el('g', { transform: `translate(${p.x},${p.y})` }, g);
+    if (fancy) {
+      el('circle', { r: 26, fill: 'transparent' }, n);
+      n.setAttribute('class', 'gate'); n.setAttribute('tabindex', '0'); n.setAttribute('role', 'button'); n.setAttribute('aria-label', `Show the ${stages[i]} stage`);
+      n.addEventListener('click', () => pickStage && pickStage(i));
+      n.addEventListener('keydown', e => { if ((e.key === 'Enter' || e.key === ' ') && pickStage) { e.preventDefault(); pickStage(i); } });
+    }
     const halo = el('circle', { r: 18, fill: 'var(--red)', opacity: 0 }, n);
     el('circle', { r: 11, fill: 'var(--bg)', stroke: i === stages.length - 1 ? 'var(--red)' : 'var(--ink)', 'stroke-width': 2 }, n);
     const dot = el('circle', { r: 4, fill: 'var(--ink)' }, n);
@@ -586,7 +594,7 @@ function setMode(m){
     packets.forEach(p => p.g.remove()); packets = [];
     storyPk = { label: 'Assurance Review', hot: true, story: true, t: storyP };
     if (geo) { mount(storyPk); place(storyPk); }
-    ledeEl.textContent = 'Scroll to follow the Assurance Review module through each gate.';
+    ledeEl.textContent = 'Watch the Assurance Review module move through each gate, or pick a stage.';
     shippedEl.hidden = true;
   } else {
     if (storyPk && storyPk.g) storyPk.g.remove();
@@ -630,27 +638,31 @@ function tick(now){
 const pipeRO = new ResizeObserver(draw); pipeRO.observe(box);
 if (reduce) { shippedEl.textContent = 'Six gates, every module'; } else { requestAnimationFrame(tick); }
 
-/* scroll story: pin the figure and walk one module through the gates */
+/* story: one module walks the gates on its own while in view; any stage can be picked. No scroll pinning. */
 if (fancy) {
   const stepEl = document.getElementById('story-step'), titleEl = document.getElementById('story-title'), textEl = document.getElementById('story-text');
-  let shown = 0;
+  const plate = document.getElementById('plate');
+  let shown = 0, idx = 0, lastStep = performance.now(), visible = false, pausedUntil = 0;
   const showStage = i => {
     if (i === shown) return; shown = i;
     stepEl.textContent = `Stage ${i + 1} of 6`; titleEl.textContent = story[i][0]; textEl.textContent = story[i][1];
     G.fromTo([titleEl, textEl], { y: 14, opacity: 0 }, { y: 0, opacity: 1, duration: .45, ease: 'power2.out', stagger: .06, overwrite: true });
   };
-  ScrollTrigger.create({
-    trigger: '#plate',
-    start: () => matchMedia('(min-width: 601px)').matches ? `center ${Math.round((innerHeight + navH()) / 2)}` : 'top 8',
-    end: () => '+=' + Math.round(innerHeight * 2.4),
-    pin: true,
-    invalidateOnRefresh: true,
-    snap: { snapTo: 1 / 5, duration: { min: .2, max: .6 }, delay: .08, ease: 'power1.inOut' },
-    onUpdate: s => { storyTarget = s.progress; showStage(Math.round(s.progress * 5)); },
-    onEnter: () => setMode('story'),
-    onEnterBack: () => setMode('story'),
-    onLeaveBack: () => { setMode('ambient'); showStage(0); }
-  });
+  const go = (i, byUser) => {
+    const nextIdx = (i + stages.length) % stages.length;
+    if (nextIdx === 0 && idx !== 0 && !byUser) { storyP = 0; if (storyPk && storyPk.g) G.fromTo(storyPk.g, { opacity: 0 }, { opacity: 1, duration: .5 }); }
+    idx = nextIdx; storyTarget = idx / (stages.length - 1); showStage(idx);
+    lastStep = performance.now();
+    if (byUser) pausedUntil = lastStep + 9000;
+  };
+  pickStage = i => go(i, true);
+  setMode('story');
+  new IntersectionObserver(es => es.forEach(e => { visible = e.isIntersecting; if (visible) lastStep = performance.now(); }), { threshold: .35 }).observe(plate);
+  setInterval(() => {
+    const now = performance.now();
+    if (!visible || document.hidden || now < pausedUntil) return;
+    if (now - lastStep > (idx === stages.length - 1 ? 3800 : 2800)) go(idx + 1, false);
+  }, 200);
   G.from('.plate', { opacity: 0, y: 16, duration: 1, delay: .5, ease: 'power2.out' });
 }
 
