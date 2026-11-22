@@ -285,7 +285,7 @@ html.lenis{scroll-behavior:auto}
       <article class="reveal">
         <p class="small">Model Context Protocol</p>
         <h3>MCP tools on a local model</h3>
-        <p>Built a research assistant: an MCP server with arXiv tools, and a chatbot that runs an agentic tool-use loop on a small local LLM served by Ollama. Trained through DeepLearning.AI's MCP course with Anthropic.</p>
+        <p>Built a research assistant: an MCP server with arXiv tools, and a chatbot that runs an agentic tool-use loop on Qwen3 8B, served locally by Ollama. Trained through DeepLearning.AI's MCP course with Anthropic.</p>
         <a href="https://github.com/amritj7/Research-Tool" target="_blank" rel="noopener">View the project</a>
       </article>
       <article class="reveal">
@@ -358,13 +358,13 @@ html.lenis{scroll-behavior:auto}
         </ul><div class="tags"><span>Autosys</span><span>Linux</span><span>OpenShift</span><span>Git</span></div></div>
       </details>
       <details class="item" data-a="innov">
-        <summary><h3>AI research assistant on MCP<span class="where">Personal project · 2026</span></h3><span class="result">An agentic chatbot that uses MCP tools to search and summarise arXiv papers, <em>running on a local LLM.</em></span><span class="plus" aria-hidden="true"></span></summary>
+        <summary><h3>AI research assistant on MCP<span class="where">Personal project · 2026</span></h3><span class="result">An agentic chatbot that uses MCP tools to search and summarise arXiv papers, <em>running on a local Qwen3 8B model.</em></span><span class="plus" aria-hidden="true"></span></summary>
         <div class="detail"><ul>
           <li>Built an MCP server in FastMCP with tools for searching arXiv and looking up saved papers, storing each paper's metadata as JSON by topic.</li>
           <li>Wrote an MCP client chatbot that discovers the server's tools over stdio and runs an agentic loop: the model asks for a tool, the client calls it through MCP, and the result goes back to the model until it answers.</li>
-          <li>Runs on a small local model served by Ollama through its Anthropic-compatible API, and switches to Claude with one environment variable.</li>
+          <li>Runs on a local Qwen3 8B model (qwen3:8b) served by Ollama through its Anthropic-compatible API, and switches to Claude with one environment variable.</li>
           <li><a href="https://github.com/amritj7/Research-Tool" target="_blank" rel="noopener">View the code on GitHub</a></li>
-        </ul><div class="tags"><span>Python</span><span>MCP</span><span>FastMCP</span><span>Ollama</span><span>Anthropic SDK</span><span>arXiv API</span><span>uv</span></div></div>
+        </ul><div class="tags"><span>Python</span><span>MCP</span><span>FastMCP</span><span>Ollama</span><span>Qwen3 8B</span><span>Anthropic SDK</span><span>arXiv API</span><span>uv</span></div></div>
       </details>
       <details class="item" data-a="innov">
         <summary><h3>PIR innovation project<span class="where">Citi Graduate Program</span></h3><span class="result">Selected among the <em>top 7 projects worldwide</em> from all Graduate Program submissions.</span><span class="plus" aria-hidden="true"></span></summary>
