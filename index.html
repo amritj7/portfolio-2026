@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0f1217">
+<script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('theme')==='light'?'light':'dark')}catch(e){}</script>
 <title>Amritansh Dixit — Software Engineer</title>
 <meta name="description" content="Amritansh Dixit, SDE3 at Citi. Full-stack and agentic AI engineering for regulated banking: Java, Spring Boot, Angular, Python, MCP.">
 <meta property="og:title" content="Amritansh Dixit — Software Engineer">
@@ -45,7 +47,12 @@ nav{position:relative;z-index:10;background:color-mix(in srgb,var(--bg) 88%,tran
 nav .wrap{display:flex;align-items:center;gap:8px 28px;padding:12px max(5vw,16px);flex-wrap:wrap}
 nav .mark{font-weight:600;text-decoration:none;margin-right:auto;display:flex;align-items:center;gap:10px}
 nav .mark i{width:28px;height:28px;border-radius:8px;background:var(--field);color:#fff;display:grid;place-items:center;font:600 13px/1 Literata,serif;font-style:normal}
-nav .links{display:flex;gap:4px 22px;flex-wrap:wrap}
+nav .links{display:flex;gap:4px 22px;flex-wrap:wrap;order:2}
+.theme-btn{order:3;flex:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--ink);display:grid;place-items:center;cursor:pointer;padding:0;transition:border-color .2s}
+.theme-btn:hover{border-color:var(--ink)}
+.theme-btn svg{width:20px;height:20px;grid-area:1/1;transition:opacity .35s,transform .45s cubic-bezier(.2,.7,.1,1)}
+:root[data-theme=dark] .i-moon,:root[data-theme=light] .i-sun{opacity:0;transform:rotate(-90deg) scale(.5)}
+html.theming,html.theming *{transition:background-color .35s,color .35s,border-color .35s,fill .35s,stroke .35s!important}
 nav .links a{text-decoration:none;font-size:15px;color:var(--muted);padding:10px 0;min-height:44px;display:inline-flex;align-items:center}
 nav .links a:hover,nav .links a.on{color:var(--ink)}
 nav .links a.on{box-shadow:inset 0 -2px var(--red)}
@@ -191,7 +198,8 @@ footer .wrap{border-top:1px solid rgba(255,255,255,.14);padding-top:20px;display
   .step .bar{height:auto;min-height:96px;transform-origin:left;transform:scaleX(0);width:var(--w)}
   .step:first-child .bar{--w:62%}.step:nth-child(2) .bar{--w:80%}.step:nth-child(3) .bar{--w:100%}
   .bar .lvl{position:static;padding:14px 16px}
-  nav .links{gap:2px 16px}
+  nav .links{gap:2px 16px;order:3;flex-basis:100%}
+  .theme-btn{order:2}
   th{width:42%}
 }
 
@@ -233,6 +241,10 @@ html.lenis{scroll-behavior:auto}
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </div>
+    <button class="theme-btn" id="theme" type="button" aria-label="Switch to light theme" title="Switch to light theme">
+      <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+      <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.6A8.2 8.2 0 0 1 9.4 4a8.2 8.2 0 1 0 10.6 10.6z"/></svg>
+    </button>
   </div>
   <div id="progress"></div>
 </nav>
@@ -505,6 +517,22 @@ if (fancy) {
   G.registerPlugin(...['ScrollTrigger', 'SplitText', 'DrawSVGPlugin', 'Flip'].filter(n => window[n]).map(n => window[n]));
 }
 const nav = document.querySelector('nav');
+
+/* ---------- theme: dark by default, visitor's choice remembered ---------- */
+const themeBtn = document.getElementById('theme'), themeMeta = document.querySelector('meta[name="theme-color"]');
+const labelTheme = t => {
+  const next = t === 'dark' ? 'light' : 'dark';
+  themeBtn.setAttribute('aria-label', `Switch to ${next} theme`); themeBtn.title = `Switch to ${next} theme`;
+  themeMeta.setAttribute('content', t === 'dark' ? '#0f1217' : '#ffffff');
+};
+labelTheme(root.getAttribute('data-theme') || 'dark');
+themeBtn.addEventListener('click', () => {
+  const t = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  if (!reduce) { root.classList.add('theming'); clearTimeout(labelTheme.t); labelTheme.t = setTimeout(() => root.classList.remove('theming'), 450); }
+  root.setAttribute('data-theme', t);
+  try { localStorage.setItem('theme', t); } catch (e) {}
+  labelTheme(t);
+});
 const navH = () => matchMedia('(min-width: 900px)').matches ? nav.offsetHeight : 0;
 
 /* ---------- pipeline figure ---------- */
