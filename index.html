@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Amritansh Dixit — Software Engineer</title>
+<meta name="description" content="Amritansh Dixit, SDE3 at Citi. Full-stack and agentic AI engineering for regulated banking: Java, Spring Boot, Angular, Python, MCP.">
+<meta property="og:title" content="Amritansh Dixit — Software Engineer">
+<meta property="og:description" content="SDE3 at Citi, offered a Devin Coach role open to no more than 100 employees worldwide. Forward deployed, full-stack and agentic AI engineering.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b4f8a'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' font-weight='700' fill='white' text-anchor='middle'%3EAD%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400&display=swap" rel="stylesheet">
+<style>
+/* VOICE: calm, exact, senior — an engineer who ships audited banking software.
+   IDEA: a scientific plate of a delivery pipeline; his modules are specimens moving through six gates.
+   PICTURE: live pipeline figure — module packets travel Requirements → Release, gates light as they pass.
+   COLOUR and TYPE: white ground, ink #10131a, prussian #0b4f8a fields, carmine #c1121f accent; Literata throughout.
+   LAYOUT: name across the top, statement row, full-width figure; then work index, promotion ladder, spec sheet, contact field. */
+:root{color-scheme:light dark;
+  --bg:light-dark(#ffffff,#0f1217);--ink:light-dark(#10131a,#e9ebf0);--muted:light-dark(#4b5262,#a3aab7);
+  --line:light-dark(#dde0e6,#262b35);--wash:light-dark(#f2f5f9,#151a22);
+  --red:light-dark(#c1121f,#ff5c62);--blue:light-dark(#0b4f8a,#7ab2ea);
+  --field:light-dark(#0b4f8a,#0c2d4d);--onfield:#f4f7fb;--onfield-muted:#bcd0e6}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px;interpolate-size:allow-keywords}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Literata,Georgia,"Times New Roman",serif;font-optical-sizing:auto;overflow-x:clip;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{color:var(--red)}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding:clamp(48px,7vw,104px) max(5vw,16px)}
+h1,h2,h3{font-weight:600;line-height:1.05;margin:0;text-wrap:balance}
+h2{font-size:clamp(32px,4.4vw,48px);letter-spacing:-.015em;max-width:20ch}
+h3{font-size:22px;line-height:1.2}
+p{margin:0 0 1em;max-width:68ch}
+.lede{font-size:clamp(18px,1.6vw,20px);color:var(--muted)}
+.small{font-size:14px;color:var(--muted)}
+.sec-head{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px 64px;align-items:end;margin-bottom:clamp(32px,4vw,56px)}
+.sec-head p{margin:0}
+
+/* nav */
+nav{position:relative;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:8px 28px;padding:12px max(5vw,16px);flex-wrap:wrap}
+nav .mark{font-weight:600;text-decoration:none;margin-right:auto;display:flex;align-items:center;gap:10px}
+nav .mark i{width:28px;height:28px;border-radius:8px;background:var(--field);color:#fff;display:grid;place-items:center;font:600 13px/1 Literata,serif;font-style:normal}
+nav .links{display:flex;gap:4px 22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:15px;color:var(--muted);padding:10px 0;min-height:44px;display:inline-flex;align-items:center}
+nav .links a:hover,nav .links a.on{color:var(--ink)}
+nav .links a.on{box-shadow:inset 0 -2px var(--red)}
+@media(min-width:900px){nav{position:sticky;top:0}}
+#progress{position:absolute;left:0;bottom:-1px;height:2px;background:var(--red);width:0;transform-origin:left}
+
+/* hero */
+.hero{padding-top:clamp(32px,4.5vw,64px);padding-bottom:clamp(32px,4vw,56px)}
+.name{font-size:clamp(52px,11.5vw,156px);font-weight:600;letter-spacing:-.035em;line-height:.92;font-variation-settings:"opsz" 72;margin:0 0 clamp(24px,3vw,40px)}
+.name>span{display:block;overflow:hidden;padding-bottom:.06em}
+@media(min-width:900px){.name{font-size:clamp(72px,9.6vw,150px)}.name>span{display:inline-block;margin-right:.22em}}
+.name span b{display:inline-block;font-weight:inherit;animation:rise 1s cubic-bezier(.2,.7,.1,1) both}
+.name>span:nth-child(2) b{animation-delay:.12s;color:var(--blue)}
+@keyframes rise{from{transform:translateY(105%)}to{transform:none}}
+.intro{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:24px 64px;align-items:start;animation:fade .9s .35s both}
+.intro .statement{font-size:clamp(22px,2.4vw,30px);line-height:1.3;margin:0;max-width:30ch;text-wrap:balance}
+.meta{display:grid;gap:10px;font-size:16px;color:var(--muted)}
+.meta strong{color:var(--ink);font-weight:600}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 20px;border-radius:999px;font:600 16px/1 Literata,serif;text-decoration:none;border:1.5px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.btn.solid{background:var(--red);border-color:var(--red);color:light-dark(#fff,#1a0809)}
+.btn:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn.solid:hover{background:color-mix(in srgb,var(--red) 85%,#000);border-color:transparent;color:#fff}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+.plate{margin:0;margin-top:clamp(36px,5vw,64px);border-top:1.5px solid var(--ink);padding-top:14px;animation:fade 1s .55s both}
+.plate-cap{display:flex;justify-content:space-between;gap:8px 24px;flex-wrap:wrap;font-size:14px;color:var(--muted)}
+.plate-cap b{color:var(--ink);font-weight:600}
+.fig{position:relative;min-height:300px}
+.fig>svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.fig text{font-family:Literata,Georgia,serif}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px 40px;margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
+.facts div{font-size:15px;color:var(--muted);line-height:1.45}
+.facts strong{display:block;color:var(--ink);font-size:clamp(22px,2.2vw,28px);font-weight:600;line-height:1.15;margin-bottom:4px}
+
+/* work */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.chip{min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:500 15px/1 Literata,serif;cursor:pointer;transition:border-color .2s,background .2s}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip .n{opacity:.6;margin-left:6px;font-size:13px}
+.work{border-top:1.5px solid var(--ink)}
+.item{border-bottom:1px solid var(--line)}
+.item[hidden]{display:none}
+.item summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) 36px;gap:8px 40px;align-items:center;padding:24px 4px;transition:background .25s}
+.item summary::-webkit-details-marker{display:none}
+.item summary:hover{background:var(--wash)}
+.item h3{font-size:clamp(22px,2.3vw,30px);letter-spacing:-.01em}
+.item .where{display:block;font-size:14px;color:var(--muted);margin-top:6px;font-weight:400}
+.item .result{font-size:16px;color:var(--ink)}
+.item .result em{font-style:normal;color:var(--red);font-weight:600}
+.plus{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);position:relative;justify-self:end;transition:transform .35s,border-color .2s}
+.plus::before,.plus::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--ink);transform:translate(-50%,-50%)}
+.plus::after{transform:translate(-50%,-50%) rotate(90deg)}
+.item[open] .plus{transform:rotate(45deg);border-color:var(--red)}
+.item::details-content{block-size:0;overflow:hidden;transition:block-size .45s cubic-bezier(.2,.7,.1,1),content-visibility .45s allow-discrete}
+.item[open]::details-content{block-size:auto}
+.detail{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) 36px;gap:16px 40px;padding:0 4px 32px}
+.detail ul{margin:0;padding-left:1.1em}
+.detail li{margin-bottom:8px;max-width:62ch}
+.detail li::marker{color:var(--red)}
+.detail a{color:var(--blue);font-weight:600}
+.tags{display:flex;flex-wrap:wrap;gap:6px;align-content:start}
+.tags span{font-size:14px;padding:5px 12px;border-radius:999px;background:var(--wash);border:1px solid var(--line)}
+
+/* ai */
+.ai-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr);gap:20px}
+.ai-grid article{border-top:1.5px solid var(--ink);padding-top:18px}
+.ai-grid h3{margin:6px 0 12px}
+.ai-grid p{font-size:16px}
+.ai-grid .small{margin:0;font-size:14px}
+.ai-grid .ai-lead{background:var(--wash);border-top:3px solid var(--red);border-radius:0 0 20px 20px;padding:24px}
+.ai-grid .ai-lead h3{font-size:clamp(24px,2.6vw,32px);line-height:1.12}
+@media(max-width:900px){.ai-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.ai-grid .ai-lead{grid-column:1/-1}}
+@media(max-width:600px){.ai-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* career */
+.career{background:var(--field);color:var(--onfield)}
+.career .lede,.career .small{color:var(--onfield-muted)}
+.career a{color:var(--onfield)}
+.ladder{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:end}
+.step{display:grid;grid-template-rows:auto auto;gap:18px}
+.bar{height:var(--h);border-top:2px solid var(--onfield);background:linear-gradient(to bottom,rgba(255,255,255,.14),rgba(255,255,255,.03));position:relative;transform-origin:bottom;transform:scaleY(0);transition:transform 1.1s cubic-bezier(.2,.7,.1,1)}
+.step:nth-child(2) .bar{transition-delay:.2s}.step:nth-child(3) .bar{transition-delay:.4s}
+.ladder.in .bar{transform:none}
+.bar .lvl{position:absolute;top:14px;left:16px;right:16px;font-size:clamp(28px,3.4vw,44px);font-weight:600;line-height:1}
+.bar .lvl small{display:block;font-size:14px;font-weight:400;color:var(--onfield-muted);margin-top:8px;line-height:1.3}
+.step:last-child .bar{border-top-color:#ff8a8f;background:linear-gradient(to bottom,rgba(255,138,143,.22),rgba(255,255,255,.03))}
+.step h3{font-size:18px}
+.step ul{margin:8px 0 0;padding-left:1.1em;font-size:15.5px;color:var(--onfield-muted)}
+.step li{margin-bottom:6px}
+.step:first-child .bar{--h:150px}.step:nth-child(2) .bar{--h:230px}.step:nth-child(3) .bar{--h:310px}
+.ladder-note{margin-top:36px;padding-top:20px;border-top:1px solid rgba(255,255,255,.22);display:flex;justify-content:space-between;gap:12px 32px;flex-wrap:wrap;font-size:15px;color:var(--onfield-muted)}
+.ladder-note strong{color:var(--onfield)}
+
+/* spec */
+.spec{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,72px)}
+table{width:100%;border-collapse:collapse;font-size:16px}
+caption,.cap{text-align:left;margin:0;line-height:1.6;font-weight:600;font-size:20px;padding-bottom:12px;border-bottom:1.5px solid var(--ink)}
+th,td{text-align:left;vertical-align:top;padding:14px 0;border-bottom:1px solid var(--line)}
+th{font-weight:600;width:38%;padding-right:20px;font-size:15px}
+td{color:var(--muted)}
+.honours{list-style:none;margin:0;padding:0}
+.honours li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:4px 14px;padding:16px 0;border-bottom:1px solid var(--line)}
+.honours svg{width:30px;height:30px;color:var(--red);margin-top:2px}
+.honours b{display:block;font-weight:600;font-size:17px;line-height:1.3}
+.honours span{color:var(--muted);font-size:15px}
+.edu{margin-top:clamp(40px,5vw,64px);padding:clamp(24px,3vw,36px);background:var(--wash);border-radius:20px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:16px 48px}
+.edu h3{font-size:clamp(24px,2.6vw,32px)}
+.edu p{margin:0 0 .6em}
+
+/* contact */
+.contact{background:var(--field);color:var(--onfield)}
+.contact .lede{color:var(--onfield-muted)}
+.mail{display:block;font-size:clamp(26px,5.6vw,72px);font-weight:600;letter-spacing:-.025em;line-height:1.05;text-decoration:none;margin:24px 0 28px;overflow-wrap:anywhere;color:var(--onfield)}
+.mail:hover{color:#ffc2c5}
+.contact .btn{border-color:var(--onfield);color:var(--onfield)}
+.contact .btn:hover{background:var(--onfield);color:#0b4f8a}
+.contact .btn.solid{background:#fff;color:#0b4f8a;border-color:#fff}
+.contact .btn.solid:hover{background:#ffc2c5;border-color:#ffc2c5}
+.reach{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px 40px;margin-top:clamp(40px,5vw,64px);padding-top:24px;border-top:1px solid rgba(255,255,255,.22);font-size:15px;color:var(--onfield-muted)}
+.reach b{display:block;color:var(--onfield);font-weight:600;font-size:18px;margin-top:4px}
+.reach a{text-decoration:none}.reach a:hover b{text-decoration:underline}
+footer{background:var(--field);color:var(--onfield-muted);font-size:14px;padding:0 max(5vw,16px) 32px}
+footer .wrap{border-top:1px solid rgba(255,255,255,.14);padding-top:20px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+#toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:999px;font-size:15px;transition:opacity .25s,transform .25s;pointer-events:none;z-index:50}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .8s,transform .8s cubic-bezier(.2,.7,.1,1)}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .sec-head,.intro,.spec,.edu{grid-template-columns:minmax(0,1fr)}
+  .item summary,.detail{grid-template-columns:minmax(0,1fr) 36px}
+  .item .result{grid-column:1;grid-row:2}
+  .item .plus{grid-column:2;grid-row:1}
+  .detail .tags{grid-column:1}
+}
+@media(max-width:600px){
+  body{font-size:16px}
+  .facts,.reach{grid-template-columns:minmax(0,1fr)}
+  .ladder{grid-template-columns:minmax(0,1fr);gap:28px}
+  .step .bar{height:auto;min-height:96px;transform-origin:left;transform:scaleX(0);width:var(--w)}
+  .step:first-child .bar{--w:62%}.step:nth-child(2) .bar{--w:80%}.step:nth-child(3) .bar{--w:100%}
+  .bar .lvl{position:static;padding:14px 16px}
+  nav .links{gap:2px 16px}
+  th{width:42%}
+}
+
+/* gsap-enhanced mode (.gs is set only when GSAP loads and motion is allowed) */
+.story{display:none}
+.gs .story{display:grid;grid-template-columns:minmax(0,180px) minmax(0,1fr);gap:8px 32px;align-items:start;min-height:136px;padding:18px 0 6px;border-top:1px solid var(--line)}
+.story-step{margin:4px 0 0;font-size:14px;color:var(--red);font-weight:600}
+.story h3{font-size:clamp(24px,2.6vw,32px);margin:0 0 8px}
+.story p{margin:0;font-size:17px;color:var(--muted);max-width:62ch}
+.gs .plate{animation:none;background:var(--bg)}
+.gs .name span b{animation:none}
+.gs .sec-head.reveal,.gs h2.reveal{opacity:1;transform:none}
+html.lenis,html.lenis body{height:auto}
+html.lenis{scroll-behavior:auto}
+.lenis.lenis-stopped{overflow:clip}
+.ladder{position:relative}
+.ladder-line{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+@media(min-width:601px){.gs .bar{transition:none}}
+@media(max-width:600px){.gs .story{grid-template-columns:minmax(0,1fr);min-height:170px}.story h3{font-size:24px}.story p{font-size:16px}}
+@supports (animation-timeline: scroll()){
+  #progress{width:100%!important;transform:scaleX(0);animation:prog linear both;animation-timeline:scroll(root)}
+  @keyframes prog{to{transform:scaleX(1)}}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}.bar{transform:none!important}
+}
+</style>
+</head>
+<body>
+<nav aria-label="Main">
+  <div class="wrap">
+    <a class="mark" href="#top"><i>AD</i>Amritansh Dixit</a>
+    <div class="links">
+      <a href="#ai">AI</a>
+      <a href="#work">Work</a>
+      <a href="#career">Career</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+  <div id="progress"></div>
+</nav>
+
+<header class="band hero" id="top">
+  <div class="wrap">
+    <h1 class="name" aria-label="Amritansh Dixit"><span><b>Amritansh</b></span><span><b>Dixit</b></span></h1>
+    <div class="intro">
+      <p class="statement">I sit with the people who'll use the software, build it end to end, and put AI agents to work in real delivery.</p>
+      <div class="meta">
+        <div><strong>Software Development Engineer III</strong> at Citi, Model Risk Management</div>
+        <div>Offered a <strong>Devin Coach</strong> role, open to no more than 100 employees across Citi worldwide</div>
+        <div>Pune, India · About four years in enterprise and banking platforms</div>
+        <div>Java, Spring Boot, Angular, Python, MCP, Kafka</div>
+        <div class="actions">
+          <a class="btn solid" href="#contact">Get in touch</a>
+          <a class="btn" href="#work">See my work</a>
+        </div>
+      </div>
+    </div>
+
+    <figure class="plate" id="plate" aria-labelledby="plate-cap">
+      <figcaption class="plate-cap" id="plate-cap"><span><b>How I ship.</b> <span id="plate-lede">Every module I own passes the same six gates. The ones moving through now are modules I've delivered.</span></span><span id="shipped">Released: 0</span></figcaption>
+      <div class="fig" id="pipe" role="img" aria-label="A delivery pipeline with six stages: requirements, estimation, design, build, test and release. Modules such as Assurance Review, Legal Entity, Calendar and Audit Trail move through it."><svg id="pipesvg"></svg></div>
+      <div class="story" id="story" aria-live="polite">
+        <p class="story-step" id="story-step">Stage 1 of 6</p>
+        <div><h3 id="story-title">Requirements</h3><p id="story-text">I start with the people who will use it. For Assurance Review, that meant business users and the senior stakeholders who attest every model in the inventory twice a year.</p></div>
+      </div>
+    </figure>
+    <div class="facts">
+      <div><strong>SDE1 to SDE3</strong>Two consecutive promotions within two years</div>
+      <div><strong>Citi Gold Award</strong>Legal Entity module taken to production in 2–3 months</div>
+      <div><strong>Devin Coach offer</strong>Open to no more than 100 employees across Citi worldwide</div>
+    </div>
+  </div>
+</header>
+
+<section class="band ai" id="ai">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Getting AI agents to do real work inside a bank</h2>
+      <p class="lede">Citi rolled out Cognition's Devin coding agent to its developers. I use it in my own delivery, I've been offered a role coaching others on it, and I build with agents and MCP myself.</p>
+    </div>
+    <div class="ai-grid">
+      <article class="ai-lead reveal">
+        <p class="small">Citi · Devin coding agent</p>
+        <h3>Devin in daily delivery, and an offer to coach others on it</h3>
+        <p>In my SDE3 delivery, Devin takes the well-scoped tasks and a human reviews every change. That work led to an offer to become a Devin Coach, a role open to no more than 100 employees across Citi worldwide.</p>
+      </article>
+      <article class="reveal">
+        <p class="small">DeepLearning.AI with Anthropic</p>
+        <h3>Model Context Protocol</h3>
+        <p>Built an MCP server with tools, resources and prompt templates in FastMCP, tested it in MCP Inspector, wired a client into a chatbot and connected it to Claude Desktop.</p>
+        <a href="https://www.deeplearning.ai/courses/mcp-build-rich-context-ai-apps-with-anthropic" target="_blank" rel="noopener">View the course</a>
+      </article>
+      <article class="reveal">
+        <p class="small">Every day</p>
+        <h3>LLMs in the loop</h3>
+        <p>I use LLM assistants daily to investigate issues, draft designs and write prompts, and I keep the judgement calls with people.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="work">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Modules I've owned, and what happened after release</h2>
+      <p class="lede">Most of my work lives inside Citi's Model Risk Management platform and its database infrastructure. Open any entry for what I did and the tools involved.</p>
+    </div>
+    <div class="filters" role="group" aria-label="Filter work">
+      <button class="chip" data-f="all" aria-pressed="true">All<span class="n"></span></button>
+      <button class="chip" data-f="mrm" aria-pressed="false">Model Risk Management<span class="n"></span></button>
+      <button class="chip" data-f="infra" aria-pressed="false">Infrastructure<span class="n"></span></button>
+      <button class="chip" data-f="innov" aria-pressed="false">Projects and research<span class="n"></span></button>
+    </div>
+    <div class="work">
+      <details class="item" data-a="mrm" open>
+        <summary><h3>Legal Entity module<span class="where">Model Risk Management platform · Citi</span></h3><span class="result">In production within 2–3 months. <em>Citi Gold Award.</em></span><span class="plus" aria-hidden="true"></span></summary>
+        <div class="detail"><ul>
+          <li>Owned the module end to end: design, development, testing, deployment and cross-functional coordination.</li>
+          <li>Worked with product owners and QA to lock requirements early so the release date held.</li>
+          <li>Recognised with the Citi Gold Award for bringing it to production on that timeline.</li>
+        </ul><div class="tags"><span>Java</span><span>Spring Boot</span><span>Angular</span><span>Microservices</span></div></div>
+      </details>
+      <details class="item" data-a="mrm">
+        <summary><h3>Assurance Review module<span class="where">Model Risk Management platform · Citi</span></h3><span class="result">The semi-annual model inventory review that senior stakeholders attest. <em>Built solo, frontend to backend.</em></span><span class="plus" aria-hidden="true"></span></summary>
+        <div class="detail"><ul>
+          <li>Twice a year, every model in the bank's inventory goes through an assurance and completeness review, and senior stakeholders attest to the result.</li>
+          <li>Owned the module alone: gathered requirements directly with business users, designed the solution, and built both the Angular frontend and the Spring Boot backend.</li>
+          <li>Took it from first requirement through to production release.</li>
+        </ul><div class="tags"><span>Java</span><span>Spring Boot</span><span>Angular</span><span>REST APIs</span><span>SQL</span></div></div>
+      </details>
+      <details class="item" data-a="mrm">
+        <summary><h3>Calendar module<span class="where">Model Risk Management platform · Citi</span></h3><span class="result">A technically complex module, owned from design to deployment. <em>Stakeholder appreciation.</em></span><span class="plus" aria-hidden="true"></span></summary>
+        <div class="detail"><ul>
+          <li>Took ownership of one of the platform's more technically involved modules.</li>
+          <li>Delivered its design, development, testing and deployment.</li>
+          <li>Earned appreciation from stakeholders for the ownership shown through delivery.</li>
+        </ul><div class="tags"><span>Java</span><span>Spring Boot</span><span>Angular</span></div></div>
+      </details>
+      <details class="item" data-a="mrm">
+        <summary><h3>MRM portal re-engineering<span class="where">Audit Trail, AMR and OPA modules · Citi</span></h3><span class="result">Performance improvements and steadier platform behaviour across three modules.</span><span class="plus" aria-hidden="true"></span></summary>
+        <div class="detail"><ul>
+          <li>Contributed to rebuilding the portal across the Audit Trail, AMR and OPA modules.</li>
+          <li>Worked with product owners, QA and senior engineers to resolve integration blockers.</li>
+          <li>Picked up the domain and codebase quickly and took ownership across workstreams.</li>
+        </ul><div class="tags"><span>Java</span><span>Spring Boot</span><span>Angular</span><span>REST APIs</span><span>SQL</span></div></div>
+      </details>
+      <details class="item" data-a="infra">
+        <summary><h3>Oracle database grid patching<span class="where">Citi Technology Infrastructure · Oracle as a Service</span></h3><span class="result">A UI-driven patching feature <em>adopted extensively across Citi</em>, replacing manual steps.</span><span class="plus" aria-hidden="true"></span></summary>
+        <div class="detail"><ul>
+          <li>Designed and built a UI for patching Oracle database grids.</li>
+          <li>Removed manual patching steps and the operational overhead that came with them.</li>
+          <li>The feature went on to wide use across the organisation.</li>
+        </ul><div class="tags"><span>Java</span><span>Angular</span><span>Oracle</span><span>Linux</span></div></div>
+      </details>
+      <details class="item" data-a="infra">
+        <summary><h3>Infrastructure workflow modernisation<span class="where">Citi Technology Infrastructure</span></h3><span class="result">Better operational visibility and fewer manual interventions.</span><span class="plus" aria-hidden="true"></span></summary>
+        <div class="detail"><ul>
+          <li>Helped move infrastructure workflows onto Autosys and automation tooling.</li>
+          <li>Made job status easier to see and cut the number of hand-run steps.</li>
+        </ul><div class="tags"><span>Autosys</span><span>Linux</span><span>OpenShift</span><span>Git</span></div></div>
+      </details>
+      <details class="item" data-a="innov">
+        <summary><h3>PIR innovation project<span class="where">Citi Graduate Program</span></h3><span class="result">Selected among the <em>top 7 projects worldwide</em> from all Graduate Program submissions.</span><span class="plus" aria-hidden="true"></span></summary>
+        <div class="detail"><ul>
+          <li>Conceived the idea and carried it through to delivery in a competitive internal programme.</li>
+          <li>Combined product thinking with cross-functional collaboration to get it built.</li>
+        </ul><div class="tags"><span>Product thinking</span><span>Prototyping</span></div></div>
+      </details>
+      <details class="item" data-a="innov">
+        <summary><h3>Science reply bot<span class="where">Axis intra-college hackathon · NIT Nagpur · 2021</span></h3><span class="result">A full-stack NLP bot that drafts factual replies to science tweets. <em>Hackathon winner.</em></span><span class="plus" aria-hidden="true"></span></summary>
+        <div class="detail"><ul>
+          <li>Reads a user's tweets, picks out the science-related ones and drafts a short, factual reply to each.</li>
+          <li>NLP pipeline in spaCy and NLTK: counts science terms, pulls context from Wikipedia and ranks candidate sentences by BLEU similarity to the tweet.</li>
+          <li>Flask API, React frontend with login and reply history in PostgreSQL, deployed on Heroku.</li>
+          <li><a href="https://github.com/ExoticEagle/axis-hack-bot" target="_blank" rel="noopener">View the code on GitHub</a></li>
+        </ul><div class="tags"><span>Python</span><span>Flask</span><span>spaCy</span><span>NLTK</span><span>React</span><span>PostgreSQL</span><span>Heroku</span></div></div>
+      </details>
+      <details class="item" data-a="innov">
+        <summary><h3>Dynamic pricing for smart grids<span class="where">Final-year project · NIT Nagpur · 2023</span></h3><span class="result">A reinforcement learning agent that sets electricity prices as demand shifts.</span><span class="plus" aria-hidden="true"></span></summary>
+        <div class="detail"><ul>
+          <li>Built a reinforcement learning agent in Python that adjusts electricity prices to balance supply and demand on a smart grid.</li>
+          <li><a href="https://colab.research.google.com/drive/1r1QY6s9xZtwupasi5A2HK3QJFammeTNz" target="_blank" rel="noopener">Open the notebook</a></li>
+        </ul><div class="tags"><span>Python</span><span>Reinforcement learning</span><span>Google Colab</span></div></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="band career" id="career">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Three levels in two years at Citi</h2>
+      <p class="lede">I joined Citi in 2023 and moved from SDE1 to SDE3 through two consecutive promotions, taking on more of the delivery each time.</p>
+    </div>
+    <div class="ladder" id="ladder">
+      <div class="step">
+        <div class="bar"><div class="lvl">SDE1<small>C9 · Citi Technology Infrastructure, Oracle as a Service</small></div></div>
+        <div><h3>Building for infrastructure teams</h3><ul>
+          <li>Designed and built UI-based Oracle grid patching.</li>
+          <li>Modernised workflows with Autosys and automation.</li>
+          <li>Shipped production-grade tools with cross-functional teams.</li>
+        </ul></div>
+      </div>
+      <div class="step">
+        <div class="bar"><div class="lvl">SDE2<small>C10 · Model Risk Management · from Jul 2024</small></div></div>
+        <div><h3>Re-engineering a regulatory portal</h3><ul>
+          <li>Rebuilt Audit Trail, AMR and OPA modules.</li>
+          <li>Unblocked integrations with product and QA.</li>
+          <li>Owned workstreams in a new domain.</li>
+        </ul></div>
+      </div>
+      <div class="step">
+        <div class="bar"><div class="lvl">SDE3<small>C11 · Model Risk Management · from Jul 2025</small></div></div>
+        <div><h3>Leading delivery end to end</h3><ul>
+          <li>Uses Devin in daily delivery; offered a Devin Coach role.</li>
+          <li>Solely owned the Assurance Review module, Angular frontend and Spring Boot backend.</li>
+          <li>Requirements, estimates, solution design and sprint plans through to release.</li>
+          <li>Coordinate 6–10 engineers and stakeholders; run sprint ceremonies.</li>
+          <li>Mentor 3–5 junior developers through reviews and knowledge sessions.</li>
+        </ul></div>
+      </div>
+    </div>
+    <div class="ladder-note"><span><strong>2023 – present</strong> · Citi, Pune</span><span>Peer recognition for running sprint ceremonies and aligning stakeholders</span></div>
+  </div>
+</section>
+
+<section class="band" id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>What I work with, and what I've been recognised for</h2>
+      <p class="lede">Full-stack enterprise engineering and agentic AI, with the planning and people side of delivery that regulated platforms need.</p>
+    </div>
+    <div class="spec">
+      <table class="reveal">
+        <caption>Technical skills</caption>
+        <tbody>
+          <tr><th scope="row">AI and agents</th><td>Devin coding agent, LLM prompting, Model Context Protocol (FastMCP, MCP Inspector, Claude Desktop)</td></tr>
+          <tr><th scope="row">Languages and frameworks</th><td>Java, Python, TypeScript, JavaScript · Spring Boot, Flask, Angular, React</td></tr>
+          <tr><th scope="row">Messaging and scheduling</th><td>Apache Kafka, Autosys</td></tr>
+          <tr><th scope="row">Infrastructure and DevOps</th><td>OpenShift, Git, Linux, Heroku</td></tr>
+          <tr><th scope="row">Machine learning</th><td>Reinforcement learning, spaCy, NLTK</td></tr>
+          <tr><th scope="row">Databases and APIs</th><td>SQL, PostgreSQL, Oracle, REST APIs, microservices</td></tr>
+          <tr><th scope="row">Delivery</th><td>Jira, Agile and Scrum, sprint planning and estimation</td></tr>
+          <tr><th scope="row">Practice</th><td>Technical solution design, microservices architecture, regulatory module development, cross-functional collaboration</td></tr>
+        </tbody>
+      </table>
+      <div class="reveal">
+        <h3 class="cap">Recognition</h3>
+        <ul class="honours">
+          <li><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="7" y="9" width="18" height="15" rx="4"/><path d="M16 4v5M12 16h.01M20 16h.01M12 20h8"/></svg><div><b>Devin Coach offer</b><span>Open to no more than 100 employees across Citi worldwide</span></div></li>
+          <li><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="16" cy="12" r="8"/><path d="M11 18.5 9 29l7-4 7 4-2-10.5"/></svg><div><b>Citi Gold Award</b><span>For taking the Legal Entity module to production in 2–3 months</span></div></li>
+          <li><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M16 3l3.6 7.6 8.4 1-6.2 5.8 1.6 8.3L16 21.6l-7.4 4.1 1.6-8.3L4 11.6l8.4-1z"/></svg><div><b>Top 7 worldwide</b><span>Citi Graduate Program innovation project, out of all global submissions</span></div></li>
+          <li><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 27h7v-7h7v-7h7V5"/><path d="M21 5h4v4"/></svg><div><b>Two consecutive promotions</b><span>SDE1 to SDE3 within two years</span></div></li>
+          <li><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="6" width="24" height="17" rx="2"/><path d="M11 28h10M16 23v5M10 13l3 3-3 3M16 19h6"/></svg><div><b>Axis intra-college hackathon, winner</b><span>NIT Nagpur, second year</span></div></li>
+        </ul>
+      </div>
+    </div>
+    <div class="edu reveal">
+      <div><p class="small">Education</p><h3>B.Tech, Computer Science and Engineering</h3></div>
+      <div><p><strong>National Institute of Technology, Nagpur</strong> · Class of 2023</p><p class="small" style="margin:0">Final-year project: reinforcement learning for dynamic pricing in smart grids. Won the Axis intra-college hackathon in second year.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band contact" id="contact">
+  <div class="wrap">
+    <h2 class="reveal">Need someone to make AI and software work inside a real organisation? Let's talk.</h2>
+    <a class="mail" href="mailto:dixitamritansh@gmail.com">dixitamritansh@gmail.com</a>
+    <div class="actions">
+      <button class="btn solid" id="copy" type="button">Copy email address</button>
+      <a class="btn" href="https://www.linkedin.com/in/iamritansh/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/amritj7" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <div class="reach">
+      <a href="https://www.linkedin.com/in/iamritansh/" target="_blank" rel="noopener">LinkedIn<b>in/iamritansh</b></a>
+      <div>Based in<b>Pune, India</b></div>
+      <div>Open to<b>Forward deployed engineering roles</b></div>
+    </div>
+  </div>
+</section>
+<footer><div class="wrap"><span>© 2026 Amritansh Dixit</span><a href="#top">Back to top</a></div></footer>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/SplitText.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/DrawSVGPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/Flip.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.27/dist/lenis.min.js"></script>
+<script>
+{
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const G = window.gsap, root = document.documentElement;
+const fancy = !!(G && window.ScrollTrigger && !reduce);
+const has = n => fancy && !!window[n];
+if (fancy) {
+  root.classList.add('gs');
+  G.registerPlugin(...['ScrollTrigger', 'SplitText', 'DrawSVGPlugin', 'Flip'].filter(n => window[n]).map(n => window[n]));
+}
+const nav = document.querySelector('nav');
+const navH = () => matchMedia('(min-width: 900px)').matches ? nav.offsetHeight : 0;
+
+/* ---------- pipeline figure ---------- */
+const svg = document.getElementById('pipesvg'), box = document.getElementById('pipe');
+const shippedEl = document.getElementById('shipped'), ledeEl = document.getElementById('plate-lede');
+const ambientLede = ledeEl.textContent;
+const NS = 'http://www.w3.org/2000/svg';
+const stages = ['Requirements', 'Estimation', 'Design', 'Build', 'Test', 'Release'];
+const story = [
+  ['Requirements', 'I start with the people who will use it. For Assurance Review, that meant business users and the senior stakeholders who attest every model in the inventory twice a year.'],
+  ['Estimation', 'I break the work into sprint-sized pieces and estimate it with a team of 6–10 engineers.'],
+  ['Design', 'I design the solution across the Angular frontend, the Spring Boot REST APIs and the data model.'],
+  ['Build', 'I build both ends, hand well-scoped tasks to the Devin coding agent, and review every change it makes.'],
+  ['Test', 'I test with QA and product owners and clear integration blockers before anything ships.'],
+  ['Release', 'It goes to production. The Legal Entity module got there in 2–3 months and won a Citi Gold Award.']
+];
+const mods = ['Assurance Review', 'Legal Entity', 'Calendar', 'Audit Trail', 'AMR', 'OPA', 'Grid patching', 'Autosys flows'];
+let geo = null, packets = [], nodes = [], shipped = 0, next = 0, last = 0;
+let mode = 'ambient', storyTarget = 0, storyP = 0, storyPk = null;
+const el = (t, a, p) => { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; };
+
+function draw(){
+  const W = box.clientWidth, vert = W < 620;
+  box.style.minHeight = vert ? '400px' : '250px';
+  const H = box.clientHeight;
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  svg.innerHTML = '';
+  const g = el('g', {}, svg);
+  const pts = stages.map((s, i) => vert
+    ? { x: Math.min(150, W * .42), y: 36 + i * (H - 72) / (stages.length - 1) }
+    : { x: 50 + i * (W - 100) / (stages.length - 1), y: H * .64 });
+  geo = { vert, pts, W, H };
+  const a = pts[0], b = pts[pts.length - 1];
+  el('line', { x1: a.x, y1: a.y, x2: b.x, y2: b.y, stroke: 'var(--line)', 'stroke-width': 6, 'stroke-linecap': 'round' }, g);
+  geo.fill = el('line', { x1: a.x, y1: a.y, x2: a.x, y2: a.y, stroke: 'var(--red)', 'stroke-width': 2.5, 'stroke-linecap': 'round', opacity: .7 }, g);
+  nodes = pts.map((p, i) => {
+    const n = el('g', { transform: `translate(${p.x},${p.y})` }, g);
+    const halo = el('circle', { r: 18, fill: 'var(--red)', opacity: 0 }, n);
+    el('circle', { r: 11, fill: 'var(--bg)', stroke: i === stages.length - 1 ? 'var(--red)' : 'var(--ink)', 'stroke-width': 2 }, n);
+    const dot = el('circle', { r: 4, fill: 'var(--ink)' }, n);
+    const t = el('text', vert ? { x: -26, y: 5, 'text-anchor': 'end', 'font-size': 15, fill: 'var(--ink)' } : { y: 44, 'text-anchor': 'middle', 'font-size': W < 820 ? 13 : 15, fill: 'var(--ink)' }, n);
+    t.textContent = stages[i];
+    if (!vert) el('line', { x1: 0, y1: 16, x2: 0, y2: 24, stroke: 'var(--muted)' }, n);
+    return { halo, dot, t: 0 };
+  });
+  geo.layer = el('g', {}, svg);
+  packets.forEach(mount);
+  if (storyPk) { mount(storyPk); place(storyPk); }
+  if (reduce) staticPose();
+}
+
+function mount(p){
+  const g = el('g', {}, geo.layer);
+  const w = p.label.length * 8.2 + 30;
+  el('line', { class: 'stem', x1: 0, y1: 0, x2: 0, y2: 0, stroke: 'var(--muted)', 'stroke-dasharray': '2 3' }, g);
+  el('rect', { x: 0, y: -17, width: w, height: 34, rx: 17, fill: p.hot ? 'var(--red)' : 'var(--ink)' }, g);
+  const t = el('text', { x: w / 2, y: 5, 'text-anchor': 'middle', 'font-size': 14, 'font-weight': 600, fill: 'var(--bg)' }, g);
+  t.textContent = p.label;
+  p.g = g; p.w = w;
+}
+
+function spawn(){
+  const p = { label: mods[next % mods.length], hot: next % mods.length === 0, t: 0, speed: .055 + Math.random() * .02 };
+  next++; packets.push(p); mount(p);
+}
+
+function pos(t){
+  const { pts } = geo, a = pts[0], b = pts[pts.length - 1];
+  return { x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t };
+}
+
+function place(p){
+  const c = pos(Math.min(p.t, 1)), stem = p.g.querySelector('.stem');
+  const fade = p.story ? 1 : p.t < .05 ? p.t / .05 : p.t > 1 ? Math.max(0, 1 - (p.t - 1) / .12) : 1;
+  if (geo.vert) { p.g.setAttribute('transform', `translate(${c.x + 30},${c.y})`); stem.setAttribute('x1', -30); stem.setAttribute('x2', 0); stem.setAttribute('y1', 0); stem.setAttribute('y2', 0); }
+  else { const lift = 56; p.g.setAttribute('transform', `translate(${c.x - p.w / 2},${c.y - lift})`); stem.setAttribute('x1', p.w / 2); stem.setAttribute('x2', p.w / 2); stem.setAttribute('y1', 17); stem.setAttribute('y2', lift - 12); }
+  p.g.setAttribute('opacity', fade);
+}
+
+function staticPose(){
+  packets.forEach(p => p.g.remove()); packets = [];
+  [0, 3, 6].forEach((k, i) => { next = k; spawn(); packets[i].t = [.1, .5, .88][i]; place(packets[i]); });
+}
+
+function setMode(m){
+  if (m === mode) return;
+  mode = m;
+  if (m === 'story') {
+    packets.forEach(p => p.g.remove()); packets = [];
+    storyPk = { label: 'Assurance Review', hot: true, story: true, t: storyP };
+    if (geo) { mount(storyPk); place(storyPk); }
+    ledeEl.textContent = 'Scroll to follow the Assurance Review module through each gate.';
+    shippedEl.hidden = true;
+  } else {
+    if (storyPk && storyPk.g) storyPk.g.remove();
+    storyPk = null; storyP = storyTarget = 0;
+    ledeEl.textContent = ambientLede;
+    shippedEl.hidden = false;
+  }
+}
+
+function tick(now){
+  const dt = Math.min(.05, (now - (last || now)) / 1000); last = now;
+  if (geo) {
+    let lead = 0, cur = -1;
+    if (mode === 'ambient') {
+      const gap = geo.vert ? .38 : .3;
+      if (!packets.length || packets[packets.length - 1].t > gap) spawn();
+      packets.forEach(p => {
+        const before = p.t; p.t += p.speed * dt;
+        geo.pts.forEach((s, i) => { const k = i / (geo.pts.length - 1); if (before < k && p.t >= k) { nodes[i].t = 1; if (i === geo.pts.length - 1) { shipped++; shippedEl.textContent = 'Released: ' + shipped; } } });
+        if (p.t <= 1) lead = Math.max(lead, p.t);
+        place(p);
+      });
+      packets = packets.filter(p => { if (p.t > 1.12) { p.g.remove(); return false; } return true; });
+      nodes.forEach(n => n.t = Math.max(0, n.t - dt * 2));
+    } else {
+      storyP += (storyTarget - storyP) * Math.min(1, dt * 9);
+      if (storyPk && storyPk.g) { storyPk.t = storyP; place(storyPk); }
+      lead = storyP;
+      cur = Math.round(storyP * (stages.length - 1));
+      nodes.forEach((n, i) => n.t += ((i === cur ? 1 : 0) - n.t) * Math.min(1, dt * 10));
+    }
+    nodes.forEach((n, i) => {
+      n.halo.setAttribute('opacity', n.t * .35); n.halo.setAttribute('r', 12 + n.t * 12);
+      n.dot.setAttribute('fill', (mode === 'story' ? i <= cur : n.t > .05) ? 'var(--red)' : 'var(--ink)');
+    });
+    const c = pos(lead); geo.fill.setAttribute('x2', c.x); geo.fill.setAttribute('y2', c.y);
+  }
+  requestAnimationFrame(tick);
+}
+
+const pipeRO = new ResizeObserver(draw); pipeRO.observe(box);
+if (reduce) { shippedEl.textContent = 'Six gates, every module'; } else { requestAnimationFrame(tick); }
+
+/* scroll story: pin the figure and walk one module through the gates */
+if (fancy) {
+  const stepEl = document.getElementById('story-step'), titleEl = document.getElementById('story-title'), textEl = document.getElementById('story-text');
+  let shown = 0;
+  const showStage = i => {
+    if (i === shown) return; shown = i;
+    stepEl.textContent = `Stage ${i + 1} of 6`; titleEl.textContent = story[i][0]; textEl.textContent = story[i][1];
+    G.fromTo([titleEl, textEl], { y: 14, opacity: 0 }, { y: 0, opacity: 1, duration: .45, ease: 'power2.out', stagger: .06, overwrite: true });
+  };
+  ScrollTrigger.create({
+    trigger: '#plate',
+    start: () => matchMedia('(min-width: 601px)').matches ? `center ${Math.round((innerHeight + navH()) / 2)}` : 'top 8',
+    end: () => '+=' + Math.round(innerHeight * 2.4),
+    pin: true,
+    invalidateOnRefresh: true,
+    snap: { snapTo: 1 / 5, duration: { min: .2, max: .6 }, delay: .08, ease: 'power1.inOut' },
+    onUpdate: s => { storyTarget = s.progress; showStage(Math.round(s.progress * 5)); },
+    onEnter: () => setMode('story'),
+    onEnterBack: () => setMode('story'),
+    onLeaveBack: () => { setMode('ambient'); showStage(0); }
+  });
+  G.from('.plate', { opacity: 0, y: 16, duration: 1, delay: .5, ease: 'power2.out' });
+}
+
+/* ---------- type: name and section headings ---------- */
+if (has('SplitText')) {
+  document.querySelectorAll('.name span b').forEach((b, k) => {
+    const split = SplitText.create(b, { type: 'chars', tag: 'span' });
+    G.from(split.chars, { yPercent: 110, duration: 1.1, ease: 'expo.out', stagger: .035, delay: .1 + k * .15 });
+  });
+  document.querySelectorAll('.sec-head h2, .contact h2').forEach(h => {
+    SplitText.create(h, {
+      type: 'lines', mask: 'lines', autoSplit: true,
+      onSplit: self => G.from(self.lines, { yPercent: 105, duration: .9, ease: 'expo.out', stagger: .09, scrollTrigger: { trigger: h, start: 'top 86%', once: true } })
+    });
+  });
+}
+
+/* ---------- promotion ladder: bars rise and a line climbs them ---------- */
+const ladder = document.getElementById('ladder');
+if (has('DrawSVGPlugin')) {
+  G.matchMedia().add('(min-width: 601px)', () => {
+    const bars = [...ladder.querySelectorAll('.bar')];
+    const line = el('svg', { class: 'ladder-line', 'aria-hidden': 'true' });
+    const path = el('path', { fill: 'none', stroke: '#ff8a8f', 'stroke-width': 3, 'stroke-linejoin': 'round', 'stroke-linecap': 'round' }, line);
+    const dot = el('circle', { r: 6, fill: '#ff8a8f' }, line);
+    ladder.prepend(line);
+    const shape = () => {
+      let d = '';
+      bars.forEach((b, i) => { const x1 = b.offsetLeft, x2 = x1 + b.offsetWidth, y = b.offsetTop; d += `${i ? 'L' : 'M'}${x1},${y} H${x2} `; });
+      path.setAttribute('d', d);
+      const lb = bars[bars.length - 1]; dot.setAttribute('cx', lb.offsetLeft + lb.offsetWidth); dot.setAttribute('cy', lb.offsetTop);
+    };
+    shape();
+    ScrollTrigger.addEventListener('refreshInit', shape);
+    const tl = G.timeline({ scrollTrigger: { trigger: ladder, start: 'top 82%', end: 'bottom 62%', scrub: .8, invalidateOnRefresh: true } });
+    bars.forEach((b, i) => tl.fromTo(b, { scaleY: 0 }, { scaleY: 1, duration: 1, ease: 'power2.out' }, i * 1.05));
+    tl.fromTo(path, { drawSVG: '0%' }, { drawSVG: '100%', duration: 3.1, ease: 'none' }, 0)
+      .fromTo(dot, { scale: 0, transformOrigin: '50% 50%' }, { scale: 1, duration: .3 }, 3);
+    return () => { ScrollTrigger.removeEventListener('refreshInit', shape); line.remove(); };
+  });
+}
+
+/* ---------- work filters (Flip when available) ---------- */
+const items = [...document.querySelectorAll('.item')], chips = [...document.querySelectorAll('.chip')];
+chips.forEach(c => {
+  const f = c.dataset.f; c.querySelector('.n').textContent = f === 'all' ? items.length : items.filter(i => i.dataset.a === f).length;
+  c.addEventListener('click', () => {
+    const state = has('Flip') ? Flip.getState(items) : null;
+    chips.forEach(x => x.setAttribute('aria-pressed', x === c));
+    items.forEach(i => i.hidden = !(f === 'all' || i.dataset.a === f));
+    if (state) Flip.from(state, {
+      duration: .55, ease: 'power2.inOut', absolute: true,
+      onEnter: els => G.fromTo(els, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: .45, delay: .1 }),
+      onLeave: els => G.to(els, { opacity: 0, duration: .25 }),
+      onComplete: () => window.ScrollTrigger && ScrollTrigger.refresh()
+    });
+    else if (window.ScrollTrigger) ScrollTrigger.refresh();
+  });
+});
+document.querySelectorAll('.item').forEach(d => d.addEventListener('toggle', () => window.ScrollTrigger && setTimeout(() => ScrollTrigger.refresh(), 480)));
+
+/* ---------- smooth scroll ---------- */
+let lenis = null;
+if (fancy && window.Lenis) {
+  try {
+    lenis = new Lenis({ autoRaf: false, lerp: .1 });
+    lenis.on('scroll', ScrollTrigger.update);
+    G.ticker.add(t => lenis.raf(t * 1000));
+    G.ticker.lagSmoothing(0);
+  } catch (e) { lenis = null; }
+}
+document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+  const t = a.hash.length > 1 && document.querySelector(a.hash);
+  if (!t) return;
+  e.preventDefault();
+  const y = t.getBoundingClientRect().top + scrollY - navH() - 8;
+  if (lenis) lenis.scrollTo(y, { duration: 1.2 }); else scrollTo({ top: y, behavior: reduce ? 'auto' : 'smooth' });
+}));
+
+/* ---------- reveals ---------- */
+const revealIO = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); revealIO.unobserve(e.target); } }), { threshold: .2 });
+document.querySelectorAll('.reveal,#ladder').forEach(n => revealIO.observe(n));
+
+/* ---------- nav state + progress fallback ---------- */
+const links = [...document.querySelectorAll('nav .links a')], bar = document.getElementById('progress');
+const secIO = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) links.forEach(l => l.classList.toggle('on', l.hash === '#' + e.target.id)); }), { rootMargin: '-45% 0px -50% 0px' });
+['ai', 'work', 'career', 'skills', 'contact'].forEach(id => secIO.observe(document.getElementById(id)));
+if (!(window.CSS && CSS.supports('animation-timeline', 'scroll()'))) {
+  addEventListener('scroll', () => { const h = document.documentElement; bar.style.width = (h.scrollTop / Math.max(1, h.scrollHeight - h.clientHeight) * 100) + '%'; }, { passive: true });
+}
+
+/* ---------- copy email ---------- */
+const toast = document.getElementById('toast');
+const say = m => { toast.textContent = m; toast.classList.add('show'); clearTimeout(say.t); say.t = setTimeout(() => toast.classList.remove('show'), 2200); };
+document.getElementById('copy').addEventListener('click', async () => {
+  try { await navigator.clipboard.writeText('dixitamritansh@gmail.com'); say('Email address copied'); }
+  catch (e) { say('Copy blocked here. Select the address above to copy it.'); }
+});
+}
+</script>
+</body>
+</html>
